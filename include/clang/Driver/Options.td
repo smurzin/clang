@@ -678,6 +678,16 @@ def fcoroutines_ts : Flag <["-"], "fcoroutines-ts">, Group<f_Group>,
 def fno_coroutines_ts : Flag <["-"], "fno-coroutines-ts">, Group<f_Group>,
   Flags<[DriverOption]>;
 
+// C++ Language Variant Proposal
+def flvariant : Flag <["-"], "flvariant">, Group<f_Group>,
+  Flags<[DriverOption, CC1Option]>,
+  HelpText<"Enable C++ lvariant support">;
+
+// C++ Pattern Matching Proposal
+def fpattern_matching : Flag<["-"], "fpattern-matching">, Group<f_Group>,
+  Flags<[DriverOption, CC1Option]>,
+  HelpText<"Enable C++ pattern matching support">;
+
 def fembed_bitcode_EQ : Joined<["-"], "fembed-bitcode=">,
     Group<f_Group>, Flags<[DriverOption, CC1Option]>, MetaVarName<"<option>">,
     HelpText<"Embed LLVM bitcode (option: off, all, bitcode, marker)">;

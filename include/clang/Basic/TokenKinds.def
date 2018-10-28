@@ -386,6 +386,12 @@ MODULES_KEYWORD(import)
 // C++ char8_t proposal
 KEYWORD(char8_t                     , CHAR8SUPPORT)
 
+// C++ pattern matching proposal
+KEYWORD(inspect                     , KEYPATTERNMATCHING)
+
+// C++ language variant proposal
+KEYWORD(lvariant                    , KEYLVARIANT)
+
 // C11 Extension
 KEYWORD(_Float16                    , KEYALL)
 

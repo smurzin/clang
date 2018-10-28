@@ -2438,6 +2438,9 @@ static void ParseLangArgs(LangOptions &Opts, ArgList &Args, InputKind IK,
       Args.hasFlag(OPT_fdouble_square_bracket_attributes,
                    OPT_fno_double_square_bracket_attributes, Opts.CPlusPlus11);
 
+  Opts.LVariant = Args.hasArg(OPT_flvariant);
+  Opts.PatternMathcing = Args.hasArg(OPT_fpattern_matching);
+
   Opts.ModulesTS = Args.hasArg(OPT_fmodules_ts);
   Opts.Modules = Args.hasArg(OPT_fmodules) || Opts.ModulesTS;
   Opts.ModulesStrictDeclUse = Args.hasArg(OPT_fmodules_strict_decluse);
