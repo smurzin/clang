@@ -301,6 +301,9 @@ Retry:
     SemiError = "__leave";
     break;
 
+  case tok::kw_inspect:             // C++ PR1308 Proposal
+    return ParseCXXInspectStmt();
+
   case tok::annot_pragma_vis:
     ProhibitAttributes(Attrs);
     HandlePragmaVisibility();

@@ -386,7 +386,7 @@ MODULES_KEYWORD(import)
 // C++ char8_t proposal
 KEYWORD(char8_t                     , CHAR8SUPPORT)
 
-// C++ pattern matching proposal
+// C++ PR1308 pattern matching proposal
 KEYWORD(inspect                     , KEYPATTERNMATCHING)
 
 // C++ language variant proposal

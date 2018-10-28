@@ -143,7 +143,7 @@ LANGOPT(RelaxedTemplateTemplateArgs, 1, 0, "C++17 relaxed matching of template t
 
 LANGOPT(DoubleSquareBracketAttributes, 1, 0, "'[[]]' attributes extension for all language standard modes")
 
-LANGOPT(PatternMathcing , 1, 0, "C++ pattern matching proposal")
+LANGOPT(PatternMatching, 1, 0, "C++ PR1308 pattern matching proposal")
 
 LANGOPT(LVariant, 1, 0, "C++ language variant proposal")
 

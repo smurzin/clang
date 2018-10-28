@@ -19,6 +19,7 @@ add_clang_library(clangParse
   ParseStmtAsm.cpp
   ParseTemplate.cpp
   ParseTentative.cpp
+  ParseInspectCXX.cpp
   Parser.cpp
 
   LINK_LIBS

@@ -1961,6 +1961,11 @@ private:
   StmtResult ParseCXXCatchBlock(bool FnCatch = false);
 
   //===--------------------------------------------------------------------===//
+  // C++ PR1308: Inspect Statemetn
+  
+  StmtResult ParseCXXInspectStmt(); 
+
+  //===--------------------------------------------------------------------===//
   // MS: SEH Statements and Blocks
 
   StmtResult ParseSEHTryBlock();

@@ -171,7 +171,7 @@ static KeywordStatus getKeywordStatus(const LangOptions &LangOpts,
   if (LangOpts.CoroutinesTS && (Flags & KEYCOROUTINES)) return KS_Enabled;
   if (LangOpts.ModulesTS && (Flags & KEYMODULES)) return KS_Enabled;
   if (LangOpts.CPlusPlus && (Flags & KEYALLCXX)) return KS_Future;
-  if (LangOpts.PatternMathcing && (Flags & KEYPATTERNMATCHING)) return KS_Enabled;
+  if (LangOpts.PatternMatching && (Flags & KEYPATTERNMATCHING)) return KS_Enabled;
   if (LangOpts.LVariant && (Flags & KEYLVARIANT)) return KS_Enabled;
   return KS_Disabled;
 }

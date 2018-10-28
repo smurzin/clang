@@ -2439,7 +2439,7 @@ static void ParseLangArgs(LangOptions &Opts, ArgList &Args, InputKind IK,
                    OPT_fno_double_square_bracket_attributes, Opts.CPlusPlus11);
 
   Opts.LVariant = Args.hasArg(OPT_flvariant);
-  Opts.PatternMathcing = Args.hasArg(OPT_fpattern_matching);
+  Opts.PatternMatching = Args.hasArg(OPT_fpattern_matching);
 
   Opts.ModulesTS = Args.hasArg(OPT_fmodules_ts);
   Opts.Modules = Args.hasArg(OPT_fmodules) || Opts.ModulesTS;
