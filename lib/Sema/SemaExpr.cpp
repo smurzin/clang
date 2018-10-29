@@ -15899,6 +15899,10 @@ Sema::ConditionResult Sema::ActOnCondition(Scope *S, SourceLocation Loc,
   case ConditionKind::Switch:
     Cond = CheckSwitchCondition(Loc, SubExpr);
     break;
+  case ConditionKind::Inspect:
+    // TODO Check something?
+    Cond = SubExpr;
+    break;
   }
   if (Cond.isInvalid())
     return ConditionError();

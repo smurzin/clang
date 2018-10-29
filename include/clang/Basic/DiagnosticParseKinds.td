@@ -259,6 +259,15 @@ def warn_atimport_in_framework_header : Warning<
   "including this header requires -fmodules">,
   InGroup<FrameworkHdrAtImport>;
 
+def err_inspect_requires_pattern_matching : Error<
+  "'inspect' requires '-fpattern-matching'">;
+def err_expected_lbrace_in_inspect_body : Error<
+  "expected '{' after 'inspect'">;
+def err_expected_pattern : Error<
+  "expected pattern">;
+def err_expected_arrow_after_pattern : Error<
+  "expected '=>' after pattern statement">;
+
 def err_invalid_reference_qualifier_application : Error<
   "'%0' qualifier may not be applied to a reference">;
 def err_illegal_decl_reference_to_reference : Error<

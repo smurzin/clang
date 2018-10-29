@@ -1793,7 +1793,7 @@ private:
                                             SourceLocation Start);
 
   //===--------------------------------------------------------------------===//
-  // C++ if/switch/while/for condition expression.
+  // C++ if/switch/while/for/inspect condition expression.
   struct ForRangeInfo;
   Sema::ConditionResult ParseCXXCondition(StmtResult *InitStmt,
                                           SourceLocation Loc,
@@ -1961,9 +1961,12 @@ private:
   StmtResult ParseCXXCatchBlock(bool FnCatch = false);
 
   //===--------------------------------------------------------------------===//
-  // C++ PR1308: Inspect Statemetn
-  
-  StmtResult ParseCXXInspectStmt(); 
+  // C++ PR1308: Inspect Statement
+
+  StmtResult ParseCXXInspectStmt();
+  StmtResult ParseCXXInspectStmtBody();
+  StmtResult ParseCXXInspectPattern();
+  ExprResult ParseCXXInspectPatternExpr();
 
   //===--------------------------------------------------------------------===//
   // MS: SEH Statements and Blocks

@@ -3739,6 +3739,14 @@ public:
                          Stmt *InitStmt,
                          ConditionResult Cond, Stmt *ThenVal,
                          SourceLocation ElseLoc, Stmt *ElseVal);
+
+  StmtResult ActOnStartOfInspectStmt(SourceLocation SwitchLoc,
+                                     Stmt *InitStmt,
+                                     ConditionResult Cond);
+  StmtResult ActOnFinishInspectStmt(SourceLocation SwitchLoc,
+                                    Stmt *Switch, Stmt *Body);
+
+
   StmtResult ActOnStartOfSwitchStmt(SourceLocation SwitchLoc,
                                     Stmt *InitStmt,
                                     ConditionResult Cond);
@@ -9132,7 +9140,7 @@ public:
                                        SourceLocation StartLoc,
                                        SourceLocation LParenLoc,
                                        SourceLocation EndLoc);
-  
+
   OMPClause *ActOnOpenMPSingleExprWithArgClause(
       OpenMPClauseKind Kind, ArrayRef<unsigned> Arguments, Expr *Expr,
       SourceLocation StartLoc, SourceLocation LParenLoc,
@@ -9187,7 +9195,7 @@ public:
   /// Called on well-formed 'unified_address' clause.
   OMPClause *ActOnOpenMPUnifiedSharedMemoryClause(SourceLocation StartLoc,
                                                   SourceLocation EndLoc);
-  
+
   /// Called on well-formed 'reverse_offload' clause.
   OMPClause *ActOnOpenMPReverseOffloadClause(SourceLocation StartLoc,
                                              SourceLocation EndLoc);
@@ -9866,7 +9874,8 @@ public:
   enum class ConditionKind {
     Boolean,     ///< A boolean condition, from 'if', 'while', 'for', or 'do'.
     ConstexprIf, ///< A constant boolean condition from 'if constexpr'.
-    Switch       ///< An integral condition for a 'switch' statement.
+    Switch,      ///< An integral condition for a 'switch' statement.
+    Inspect      ///< Any type condition for an `inspect` statement.
   };
 
   ConditionResult ActOnCondition(Scope *S, SourceLocation Loc,

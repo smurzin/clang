@@ -58,7 +58,7 @@ public:
     /// just contain loop constructs but don't contain decls.
     DeclScope = 0x08,
 
-    /// The controlling scope in a if/switch/while/for statement.
+    /// The controlling scope in a if/switch/while/for/inspect statement.
     ControlScope = 0x10,
 
     /// The scope of a struct/union/class definition.

@@ -734,6 +734,20 @@ StmtResult Sema::ActOnStartOfSwitchStmt(SourceLocation SwitchLoc,
   return SS;
 }
 
+StmtResult Sema::ActOnStartOfInspectStmt(SourceLocation InspectLoc,
+                                         Stmt *InitStmt, ConditionResult Cond) {
+  Expr *CondExpr = Cond.get().second;
+  assert((Cond.isInvalid() || CondExpr) && "inspect with no condition");
+
+
+  return StmtEmpty();
+}
+
+StmtResult Sema::ActOnFinishInspectStmt(SourceLocation InspectLoc,
+                                        Stmt *Inspect, Stmt *Body) {
+  return Inspect;
+}
+
 static void AdjustAPSInt(llvm::APSInt &Val, unsigned BitWidth, bool IsSigned) {
   Val = Val.extOrTrunc(BitWidth);
   Val.setIsSigned(IsSigned);

@@ -4478,8 +4478,11 @@ void Clang::ConstructJob(Compilation &C, const JobAction &JA,
   Args.AddLastArg(CmdArgs, options::OPT_fdouble_square_bracket_attributes,
                   options::OPT_fno_double_square_bracket_attributes);
 
+
   bool HaveModules = false;
   RenderModulesOptions(C, D, Args, Input, Output, CmdArgs, HaveModules);
+
+  Args.AddLastArg(CmdArgs, options::OPT_fpattern_matching);
 
   // -faccess-control is default.
   if (Args.hasFlag(options::OPT_fno_access_control,
